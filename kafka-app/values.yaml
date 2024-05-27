@@ -8,13 +8,13 @@ backend:
       mongoUser: root
     image:
       repository: evgenyniko/backend
-      tag: v13
+      tag: "2"
   replicas: 1
 backendService:
   ports:
-  - port: 5000
-    protocol: TCP
-    targetPort: 5000
+    - port: 5000
+      protocol: TCP
+      targetPort: 5000
   type: ClusterIP
 frontend:
   frontend:
@@ -24,11 +24,11 @@ frontend:
       kafkaPort: "29092"
     image:
       repository: evgenyniko/frontend
-      tag: v14
+      tag: "2"
   replicas: 1
 frontendService:
   ports:
-  - port: 8000
-    targetPort: 8000
+    - port: 8000
+      targetPort: 8000
   type: ClusterIP
 kubernetesClusterDomain: cluster.local
