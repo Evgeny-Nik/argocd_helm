@@ -1,0 +1,34 @@
+backend:
+  backend:
+    env:
+      kafkaHost: kafka.default.svc.cluster.local
+      kafkaPort: "29092"
+      mongoHost: mongodb-release.default.svc.cluster.local
+      mongoPort: "27017"
+      mongoUser: root
+    image:
+      repository: evgenyniko/backend
+      tag: v13
+  replicas: 1
+backendService:
+  ports:
+  - port: 5000
+    protocol: TCP
+    targetPort: 5000
+  type: ClusterIP
+frontend:
+  frontend:
+    env:
+      apiUrl: kafka-app-backend-service.default.svc.cluster.local:5000
+      kafkaHost: kafka.default.svc.cluster.local
+      kafkaPort: "29092"
+    image:
+      repository: evgenyniko/frontend
+      tag: v14
+  replicas: 1
+frontendService:
+  ports:
+  - port: 8000
+    targetPort: 8000
+  type: ClusterIP
+kubernetesClusterDomain: cluster.local

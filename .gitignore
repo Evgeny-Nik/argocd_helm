@@ -1,0 +1,6 @@
+backend.yaml
+frontend.yaml
+ingress.yaml
+storage-class.yaml
+client.properties
+kafka_files/
