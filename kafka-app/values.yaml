@@ -7,8 +7,8 @@ backend:
       mongoPort: "27017"
       mongoUser: root
     image:
-      repository: evgenyniko/backend
-      tag: "2"
+      repository: evgenyniko/argocd_backend
+      tag: v13
   replicas: 1
 backendService:
   ports:
@@ -23,8 +23,8 @@ frontend:
       kafkaHost: kafka.default.svc.cluster.local
       kafkaPort: "29092"
     image:
-      repository: evgenyniko/frontend
-      tag: "2"
+      repository: evgenyniko/argocd_frontend
+      tag: v14
   replicas: 1
 frontendService:
   ports:
