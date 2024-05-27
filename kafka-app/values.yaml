@@ -19,7 +19,7 @@ backendService:
 frontend:
   frontend:
     env:
-      apiUrl: kafka-app-backend-service.default.svc.cluster.local:5000
+      apiUrl: kafka-argo-app-kafka-app-backend-service.default.svc.cluster.local:5000
       kafkaHost: kafka.default.svc.cluster.local
       kafkaPort: "29092"
     image:
