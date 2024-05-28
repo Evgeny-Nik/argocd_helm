@@ -8,7 +8,7 @@ backend:
       mongoUser: root
     image:
       repository: evgenyniko/argocd_backend
-      tag: "4"
+      tag: "5"
   replicas: 1
 backendService:
   ports:
@@ -24,7 +24,7 @@ frontend:
       kafkaPort: "29092"
     image:
       repository: evgenyniko/argocd_frontend
-      tag: "4"
+      tag: "5"
   replicas: 1
 frontendService:
   ports:
